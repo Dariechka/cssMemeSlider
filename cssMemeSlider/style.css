@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    background-color: #1f1e1a;
+}
+
+main {
+    padding-top: 20px;
+}
+
+.container {
+    max-width: 990px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.memRibbon {
+    width: 990px;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 18px;
+    align-self: center;
+    position: relative;
+}
+
+.memRibbon__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s ease;
+}
+
+.memRibbon__slide {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;  
+}
+
+.slide_img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.memSecondPart {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.memText_text {
+    font-family: "Montserrat", sans-serif;
+    color: #F9F6EE;
+    font-weight: 500;
+    font-size: 21px;
+    display: none;
+}
+
+.radio_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1px;
+}
+
+.radio__input {
+    position: absolute;
+    opacity: 0;
+    left: -100vw;
+}
+
+.radio__state {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.radio__state:hover > .radio__icon {
+    background-color: #F9F6EE;
+    border: 2px solid #F9F6EE;
+    cursor: pointer;
+}
+
+.radio__icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #4169E1;
+    border: 2px solid #4169E1;
+}
+
+.radio__input:checked ~ .radio__state .radio__icon {
+    background: transparent;
+}
+
+#first:checked .memSecondPart .memRibbon .memRibbon__inner .memRibbon__inner {
+    transform: translateX(0px);
+}
+
+#second:checked .memSecondPart ~ .memRibbon > .memRibbon__inner > .memRibbon__inner {
+    transform: translateX(-990px);
+}
+
+#third:checked~.memRibbon__inner {
+    transform: translateX(-1980px);
+}
+
+#fourth:checked~.memRibbon__inner {
+    transform: translateX(-2970px);
+}
