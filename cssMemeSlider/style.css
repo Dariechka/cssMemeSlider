@@ -19,17 +19,19 @@ main {
     max-width: 990px;
     overflow: hidden;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 520px 100px;
 }
 
 .memRibbon {
-    width: 990px;
+    max-width: 990px;
     height: 520px;
     overflow: hidden;
     border-radius: 18px;
-    align-self: center;
     position: relative;
+    grid-column: 1 / span 2;
+    grid-row: 1;
 }
 
 .memRibbon__inner {
@@ -62,10 +64,25 @@ main {
     transform: translate(-50%, -50%);
 }
 
-.memSecondPart {
-    padding-top: 20px;
+.memTextRibbon {
+    max-width: 800px;
+    height: 100%;
+    overflow: hidden;
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    margin-top: 30px;
+}
+
+.memTextRibbon__inner {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s ease;
 }
 
 .memText_text {
@@ -73,13 +90,22 @@ main {
     color: #F9F6EE;
     font-weight: 500;
     font-size: 21px;
-    display: none;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;  
 }
 
 .radio_container {
     display: flex;
     justify-content: space-between;
     gap: 1px;
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 30px;
 }
 
 .radio__input {
@@ -108,22 +134,50 @@ main {
     border: 2px solid #4169E1;
 }
 
-.radio__input:checked ~ .radio__state .radio__icon {
-    background: transparent;
+#first:checked~.radio_container > .first > .radio__state > .radio__icon {
+    background-color: transparent;
 }
 
-#first:checked .memSecondPart .memRibbon .memRibbon__inner .memRibbon__inner {
+#first:checked~.memRibbon > .memRibbon__inner {
     transform: translateX(0px);
 }
 
-#second:checked .memSecondPart ~ .memRibbon > .memRibbon__inner > .memRibbon__inner {
+#first:checked~.memTextRibbon > .memTextRibbon__inner {
+    transform: translateX(0px);
+}
+
+#second:checked~.radio_container > .second > .radio__state > .radio__icon {
+    background-color: transparent;
+}
+
+#second:checked~.memRibbon > .memRibbon__inner {
     transform: translateX(-990px);
 }
 
-#third:checked~.memRibbon__inner {
+#second:checked~.memTextRibbon > .memTextRibbon__inner {
+    transform: translateX(-800px);
+}
+
+#third:checked~.radio_container > .third > .radio__state > .radio__icon {
+    background-color: transparent;
+}
+
+#third:checked~.memRibbon > .memRibbon__inner {
     transform: translateX(-1980px);
 }
 
-#fourth:checked~.memRibbon__inner {
+#third:checked~.memTextRibbon > .memTextRibbon__inner {
+    transform: translateX(-1600px);
+}
+
+#fourth:checked~.radio_container > .fourth > .radio__state > .radio__icon {
+    background-color: transparent;
+}
+
+#fourth:checked~.memRibbon > .memRibbon__inner {
     transform: translateX(-2970px);
+}
+
+#fourth:checked~.memTextRibbon > .memTextRibbon__inner {
+    transform: translateX(-2400px);
 }
