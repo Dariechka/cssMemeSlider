@@ -60,7 +60,7 @@ html, body {
     overflow: hidden;
     grid-column: 1;
     grid-row: 2;
-    margin-top: 2em;
+    margin-top: 3vh;
 }
 
 .memTextRibbon__inner {
@@ -75,7 +75,7 @@ html, body {
     font-family: "Montserrat", sans-serif;
     color: #F9F6EE;
     font-weight: 400;
-    font-size: 5em;
+    font-size: 3vh;
     width: 100%;
     min-width: 100%;
     height: 100%;
@@ -85,10 +85,10 @@ html, body {
 .radio_container {
     display: flex;
     justify-content: space-between;
-    gap: 1em;
+    gap: 1vh;
     grid-column: 2;
     grid-row: 2;
-    margin-top: 3em;
+    margin-top: 3vh;
     justify-self: end;
 }
 
@@ -110,8 +110,8 @@ html, body {
 }
 
 .radio__icon {
-    min-width: 4em;
-    min-height: 4em;
+    min-width: 3vh;
+    min-height: 3vh;
     border-radius: 50%;
     background-color: #4169E1;
     border: 2px solid #4169E1;
@@ -165,18 +165,27 @@ html, body {
     transform: translateX(-300%);
 }
 
-@media screen and (max-width: 840px) and (min-width: 521px) {
-    .radio__icon {
-        min-width: 3em;
-        min-height: 3em;
+@media screen and (max-width: 900px) and (min-width: 551px) {
+    .container {
+        grid-template-rows: 50% 50%;
     }
 
     .memText_text {
-        font-size: 4em; 
+        font-size: 2vh; 
+    }
+
+    .radio__state {
+        min-width: 20%;
+        min-height: 20%;
+    }
+
+    .radio__icon {
+        min-width: 1.7vh;
+        min-height: 1.7vh;
     }
 }
 
-@media screen and (max-width: 520px) and (min-width: 320px) {
+@media screen and (max-width: 550px) and (min-width: 320px) {
     .container {
         grid-template-columns: 100%;
         grid-template-rows: 60% 10% 30%;
@@ -191,6 +200,7 @@ html, body {
         grid-column: 1;
         grid-row: 2;
         justify-self: center;
+        align-self: start;
     }
 
     .memTextRibbon {
@@ -202,17 +212,16 @@ html, body {
     }
 
     .memText_text {
-        font-weight: 300;
-        font-size: 0.8em;
+        font-size: 2vh; 
     }
 
     .radio__state {
-        width: 1.25em;
-        height: 1.25em;
+        min-width: 2.5vh;
+        min-height: 2.5vh;
     }
 
     .radio__icon {
-        width: 0.75em;
-        height: 0.75em;
+        min-width: 2vh;
+        min-height: 2vh;
     }
 }
