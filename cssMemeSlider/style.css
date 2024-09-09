@@ -98,8 +98,8 @@ html, body {
 }
 
 .radio__state {
-    min-width: 0.8em;
-    min-height: 0.8em;
+    min-width: 30%;
+    min-height: 30%;
     cursor: pointer;
 }
 
@@ -110,8 +110,8 @@ html, body {
 }
 
 .radio__icon {
-    min-width: 0.8em;
-    min-height: 0.8em;
+    min-width: 0.9em;
+    min-height: 0.9em;
     border-radius: 50%;
     background-color: #4169E1;
     border: 2px solid #4169E1;
@@ -165,15 +165,10 @@ html, body {
     transform: translateX(-300%);
 }
 
-@media screen and (max-width: 840px) and (min-width: 501px) {
-    .radio__state {
-        min-width: 0.7em;
-        min-height: 0.7em;
-    }
-    
+@media screen and (max-width: 840px) and (min-width: 521px) {
     .radio__icon {
-        min-width: 0.7em;
-        min-height: 0.7em;
+        min-width: 0.8em;
+        min-height: 0.8em;
     }
 
     .memText_text {
@@ -181,7 +176,7 @@ html, body {
     }
 }
 
-@media screen and (max-width: 500px) and (min-width: 320px) {
+@media screen and (max-width: 520px) and (min-width: 320px) {
     .container {
         grid-template-columns: 100%;
         grid-template-rows: 60% 10% 30%;
