@@ -3,7 +3,6 @@
 html, body {
     height: 100vh;
     margin: 0;
-    scroll-behavior: smooth;
 }
 
 * {
@@ -11,24 +10,22 @@ html, body {
     background-color: #1f1e1a;
 }
 
-main {
-    padding-top: 20px;
-}
-
 .container {
-    max-width: 990px;
+    padding-top: 10vh;
+    max-width: 60vw;
+    max-height: 100vh;
     overflow: hidden;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 90% 10%;
-    grid-template-rows: 520px 100px;
+    grid-template-columns: 76% 24%;
+    grid-template-rows: 60% 40%;
 }
 
 .memRibbon {
-    max-width: 990px;
-    height: 520px;
+    max-width: 100%;
+    height: 100%;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 1em;
     grid-column: 1 / span 2;
     grid-row: 1;
 }
@@ -47,7 +44,8 @@ main {
     width: 100%;
     min-width: 100%;
     height: 100%;
-    margin: 0;  
+    margin: 0; 
+    border-radius: 1em; 
 }
 
 .slide_img {
@@ -57,12 +55,12 @@ main {
 }
 
 .memTextRibbon {
-    max-width: 800px;
+    max-width: 100%;
     height: 100%;
     overflow: hidden;
     grid-column: 1;
     grid-row: 2;
-    margin-top: 30px;
+    margin-top: 2em;
 }
 
 .memTextRibbon__inner {
@@ -76,8 +74,8 @@ main {
 .memText_text {
     font-family: "Montserrat", sans-serif;
     color: #F9F6EE;
-    font-weight: 500;
-    font-size: 21px;
+    font-weight: 400;
+    font-size: 1.2em;
     width: 100%;
     min-width: 100%;
     height: 100%;
@@ -87,10 +85,11 @@ main {
 .radio_container {
     display: flex;
     justify-content: space-between;
-    gap: 1px;
+    gap: 0.5em;
     grid-column: 2;
     grid-row: 2;
-    margin-top: 30px;
+    margin-top: 2em;
+    justify-self: end;
 }
 
 .radio__input {
@@ -99,8 +98,8 @@ main {
 }
 
 .radio__state {
-    width: 25px;
-    height: 25px;
+    min-width: 0.8em;
+    min-height: 0.8em;
     cursor: pointer;
 }
 
@@ -111,8 +110,8 @@ main {
 }
 
 .radio__icon {
-    width: 15px;
-    height: 15px;
+    min-width: 0.8em;
+    min-height: 0.8em;
     border-radius: 50%;
     background-color: #4169E1;
     border: 2px solid #4169E1;
@@ -123,11 +122,11 @@ main {
 }
 
 #first:checked~.memRibbon > .memRibbon__inner {
-    transform: translateX(0px);
+    transform: translateX(0%);
 }
 
 #first:checked~.memTextRibbon > .memTextRibbon__inner {
-    transform: translateX(0px);
+    transform: translateX(0%);
 }
 
 #second:checked~.radio_container > .second > .radio__state > .radio__icon {
@@ -135,11 +134,11 @@ main {
 }
 
 #second:checked~.memRibbon > .memRibbon__inner {
-    transform: translateX(-990px);
+    transform: translateX(-100%);
 }
 
 #second:checked~.memTextRibbon > .memTextRibbon__inner {
-    transform: translateX(-800px);
+    transform: translateX(-100%);
 }
 
 #third:checked~.radio_container > .third > .radio__state > .radio__icon {
@@ -147,11 +146,11 @@ main {
 }
 
 #third:checked~.memRibbon > .memRibbon__inner {
-    transform: translateX(-1980px);
+    transform: translateX(-200%);
 }
 
 #third:checked~.memTextRibbon > .memTextRibbon__inner {
-    transform: translateX(-1600px);
+    transform: translateX(-200%);
 }
 
 #fourth:checked~.radio_container > .fourth > .radio__state > .radio__icon {
@@ -159,23 +158,36 @@ main {
 }
 
 #fourth:checked~.memRibbon > .memRibbon__inner {
-    transform: translateX(-2970px);
+    transform: translateX(-300%);
 }
 
 #fourth:checked~.memTextRibbon > .memTextRibbon__inner {
-    transform: translateX(-2400px);
+    transform: translateX(-300%);
 }
 
-@media screen and (max-width: 1000px) and (min-width: 768px) {
+@media screen and (max-width: 840px) and (min-width: 501px) {
+    .radio__state {
+        min-width: 0.7em;
+        min-height: 0.7em;
+    }
+    
+    .radio__icon {
+        min-width: 0.7em;
+        min-height: 0.7em;
+    }
+
+    .memText_text {
+        font-size: 0.8em; 
+    }
+}
+
+@media screen and (max-width: 500px) and (min-width: 320px) {
     .container {
-        max-width: 600px;
         grid-template-columns: 100%;
-        grid-template-rows: 300px 50px 50px;
+        grid-template-rows: 60% 10% 30%;
     }
 
     .memRibbon {
-        width: 700px;
-        height: 300px;
         grid-column: 1;
         grid-row: 1;
     }
@@ -187,7 +199,7 @@ main {
     }
 
     .memTextRibbon {
-        width: 700px;
+        width: 100%;
         height: 100%;
         grid-column: 1;
         grid-row: 3;
@@ -195,111 +207,17 @@ main {
     }
 
     .memText_text {
-        font-weight: 400;
-        font-size: 18px;
+        font-weight: 300;
+        font-size: 0.8em;
     }
 
     .radio__state {
-        width: 20px;
-        height: 20px;
+        width: 1.25em;
+        height: 1.25em;
     }
 
     .radio__icon {
-        width: 12px;
-        height: 12px;
-    }
-
-    #second:checked~.memRibbon > .memRibbon__inner {
-        transform: translateX(-700px);
-    }
-    
-    #second:checked~.memTextRibbon > .memTextRibbon__inner {
-        transform: translateX(-700px);
-    }
-
-    #third:checked~.memRibbon > .memRibbon__inner {
-        transform: translateX(-1400px);
-    }
-    
-    #third:checked~.memTextRibbon > .memTextRibbon__inner {
-        transform: translateX(-1400px);
-    }
-
-    #fourth:checked~.memRibbon > .memRibbon__inner {
-        transform: translateX(-2100px);
-    }
-    
-    #fourth:checked~.memTextRibbon > .memTextRibbon__inner {
-        transform: translateX(-2100px);
-    }
-}
-
-@media screen and (max-width: 767px) and (min-width: 320px) {
-    .container {
-        max-width: 300px;
-        grid-template-columns: 100%;
-        grid-template-rows: 150px 30px 40px;
-    }
-
-    .memRibbon {
-        width: 300px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .radio_container {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: center;
-        margin-top: 10px;
-    }
-
-    .memTextRibbon {
-        width: 300px;
-        height: 100%;
-        grid-column: 1;
-        grid-row: 3;
-        justify-self: start;
-        margin-top: 10px;
-    }
-
-    .memText_text {
-        font-weight: 200;
-        font-size: 10px;
-    }
-
-    .radio__state {
-        width: 15px;
-        height: 15px;
-    }
-
-    .radio__icon {
-        width: 8px;
-        height: 8px;
-    }
-
-    #second:checked~.memRibbon > .memRibbon__inner {
-        transform: translateX(-300px);
-    }
-    
-    #second:checked~.memTextRibbon > .memTextRibbon__inner {
-        transform: translateX(-300px);
-    }
-
-    #third:checked~.memRibbon > .memRibbon__inner {
-        transform: translateX(-600px);
-    }
-    
-    #third:checked~.memTextRibbon > .memTextRibbon__inner {
-        transform: translateX(-600px);
-    }
-
-    #fourth:checked~.memRibbon > .memRibbon__inner {
-        transform: translateX(-900px);
-    }
-    
-    #fourth:checked~.memTextRibbon > .memTextRibbon__inner {
-        transform: translateX(-900px);
+        width: 0.75em;
+        height: 0.75em;
     }
 }
