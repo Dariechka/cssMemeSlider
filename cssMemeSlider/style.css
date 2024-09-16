@@ -75,7 +75,7 @@ html, body {
     font-family: "Montserrat", sans-serif;
     color: #F9F6EE;
     font-weight: 400;
-    font-size: 3vh;
+    font-size: 2vh;
     width: 100%;
     min-width: 100%;
     height: 100%;
@@ -105,13 +105,13 @@ html, body {
 
 .radio__state:hover > .radio__icon {
     background-color: #F9F6EE;
-    border: 2px solid #F9F6EE;
+    border: 0.2vw solid #F9F6EE;
     cursor: pointer;
 }
 
 .radio__state:active > .radio__icon {
     background-color: #D3D3D3;
-    border: 2px solid #D3D3D3;
+    border: 0.2vw solid #D3D3D3;
     cursor: pointer;
 }
 
@@ -120,7 +120,7 @@ html, body {
     min-height: 3vh;
     border-radius: 50%;
     background-color: #4169E1;
-    border: 2px solid #4169E1;
+    border: 0.2vw solid #4169E1;
 }
 
 #first:checked~.radio_container > .first > .radio__state > .radio__icon {
@@ -177,7 +177,7 @@ html, body {
     }
 
     .memText_text {
-        font-size: 2vh; 
+        font-size: 1.5vh; 
     }
 
     .radio__state {
@@ -218,12 +218,12 @@ html, body {
     }
 
     .memText_text {
-        font-size: 2vh; 
+        font-size: 1.3vh; 
     }
 
     .radio__state {
-        min-width: 2.5vh;
-        min-height: 2.5vh;
+        min-width: 2.7vh;
+        min-height: 2.7vh;
     }
 
     .radio__icon {
